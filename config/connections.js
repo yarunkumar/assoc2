@@ -47,7 +47,7 @@ module.exports.connections = {
      password: 'admin', //optional
      database: 'assoc2' //optional
    },
-   OpenshiftsqlServer: {
+   Openshiftsql: {
      adapter: 'sails-mysql',
      host: process.env.OPENSHIFT_MYSQL_DB_HOST,
      port: process.env.OPENSHIFT_MYSQL_DB_PORT,
