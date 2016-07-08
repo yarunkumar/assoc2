@@ -65,6 +65,16 @@ module.exports = {
     Customer.destroy(req.param('id')).exec( function() {
       res.redirect('/customer/');
     });
+  },
+  showj: function (req, res, next) {
+    Customer.findOne(req.param('id')).populateAll().exec(function (err, customer) {
+      if (err) return next(err);
+      if (!customer) return next();
+      res.json({
+        customer: customer
+      });
+    });
+
   }
 
 
