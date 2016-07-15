@@ -32,6 +32,15 @@ module.exports = {
         stocks: stocks
       });
     });
+  },
+  edit: function(req,res,next) {
+    Stock.findOne(req.param('id'), function foundStock(err, stock) {
+      if(err) return next(err);
+      if (!stock) return next();
+      res.view({
+        stock: stock
+      });
+    });
   }
 
 };

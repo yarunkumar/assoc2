@@ -17,7 +17,10 @@ module.exports = {
       type: 'float',
       required: true
     },
-
+    price: {
+      type: 'float',
+      required: true
+    },
     owner: {
       model: 'customer',
       required: true
