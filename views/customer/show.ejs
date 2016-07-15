@@ -8,7 +8,7 @@
   <tr>
     <th>Symbol</th>
     <th>Number of Shares</th>
-    <th>Current Price</th>
+
     <th></th>
     
   </tr>
@@ -16,12 +16,19 @@
   <tr data-id="<%= stock.id %>" data-model="stock" >
     <td><%= stock.symbol %></td>
     <td><%= stock.number_of_shares %></td>
-    <td></td>
+    
     <td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
   </tr>
   <% }); %>
 </table>
 
+
+<% var i = 0; %>
+<% _.each(customer.stocks, function(stock) { %>
+<%i = i + stock.number_of_shares; %>  
+  </tr>
+  <% }); %>
+  <h3>Total number of stocks: <%= i %></h3>
 
 
 <form action="/stock/new" method="POST" >
